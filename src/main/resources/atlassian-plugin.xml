@@ -29,4 +29,13 @@
     <description key="hello.description">The Hello Plugin</description>
     <url-pattern>/hello</url-pattern>
   </servlet>
+
+  <keyboard-shortcut name="HelloKeyboardShortcut" i18n-name-key="hello.name" key="helloKeyboardShortcut">
+    <description key="hello.description">The Hello Plugin</description>
+    <order>10</order>
+    <shortcut>gk</shortcut>
+    <operation type="goTo">/plugins/servlet/hello</operation>
+    <context>global</context>
+  </keyboard-shortcut>
+
 </atlassian-plugin>
