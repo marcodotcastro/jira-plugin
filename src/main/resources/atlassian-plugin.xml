@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/pluginIcon.png</param>
+    <param name="plugin-logo">images/pluginLogo.png</param>
+  </plugin-info>
+  <!-- add our i18n resource -->
+  <resource type="i18n" name="i18n" location="hello"/>
+  <!-- add our web resources -->
+  <web-resource key="hello-resources" name="hello Web Resources">
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <resource type="download" name="hello.css" location="/css/hello.css"/>
+    <resource type="download" name="hello.js" location="/js/hello.js"/>
+    <resource type="download" name="images/" location="/images"/>
+    <context>hello</context>
+  </web-resource>
+
+  <web-item name="HelloMenu" i18n-name-key="hello.name" key="hello-menu" section="system.admin/globalsettings" weight="1000">
+    <description key="hello.description">The Hello Plugin</description>
+    <label key="hello.label"/>
+    <link linkId="hello-link">/plugins/servlet/hello</link>
+  </web-item>
+
+  <servlet name="HelloServlet" i18n-name-key="hello.name" key="hello-servlet" class="br.com.jira.hello.servlet.Hello">
+    <description key="hello.description">The Hello Plugin</description>
+    <url-pattern>/hello</url-pattern>
+  </servlet>
+</atlassian-plugin>
