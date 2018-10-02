@@ -122,6 +122,7 @@
                 <configuration>
                     <productVersion>${jira.version}</productVersion>
                     <productDataVersion>${jira.version}</productDataVersion>
+                    <jvmArgs>-Xms1g -Xmx2g -XX:MaxPermSize=1g -XX:-UseGCOverheadLimit -server</jvmArgs>
                     <!-- Uncomment to install TestKit backdoor in JIRA. -->
                     <!--
                     <pluginArtifacts>

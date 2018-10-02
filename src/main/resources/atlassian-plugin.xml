@@ -18,18 +18,15 @@
     <resource type="download" name="images/" location="/images"/>
     <context>hello</context>
   </web-resource>
-
   <web-item name="HelloMenu" i18n-name-key="hello.name" key="hello-menu" section="system.admin/globalsettings" weight="1000">
     <description key="hello.description">The Hello Plugin</description>
     <label key="hello.label"/>
     <link linkId="hello-link">/plugins/servlet/hello</link>
   </web-item>
-
   <servlet name="HelloServlet" i18n-name-key="hello.name" key="hello-servlet" class="br.com.jira.hello.servlet.Hello">
     <description key="hello.description">The Hello Plugin</description>
     <url-pattern>/hello</url-pattern>
   </servlet>
-
   <keyboard-shortcut name="HelloKeyboardShortcut" i18n-name-key="hello.name" key="helloKeyboardShortcut">
     <description key="hello.description">The Hello Plugin</description>
     <order>10</order>
@@ -37,5 +34,9 @@
     <operation type="goTo">/plugins/servlet/hello</operation>
     <context>global</context>
   </keyboard-shortcut>
-
+  <jql-function name="Recent Project Function" i18n-name-key="recent-project-function.name" key="recent-project-function" class="br.com.jira.hello.jira.jql.RecentProjectFunction">
+    <description key="recent-project-function.description">The Recent Project Function Plugin</description>
+    <fname>recentProjects</fname>
+    <list>true</list>
+  </jql-function>
 </atlassian-plugin>
